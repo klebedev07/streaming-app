@@ -10,6 +10,7 @@ module.exports = function (api) {
           rootPathPrefix: "@/",
         },
       ],
+      ["nativewind/babel"],
     ],
   }
 }
