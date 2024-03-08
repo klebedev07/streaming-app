@@ -1,3 +1,3 @@
-import { User } from './user.interface'
+import { IUser } from './user.interface'
 
-export interface IAuthFormData extends Pick<User, 'email' | 'password'> {}
+export interface IAuthFormData extends Pick<IUser, 'email' | 'password'> {}
