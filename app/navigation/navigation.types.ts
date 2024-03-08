@@ -10,7 +10,7 @@ export type TypeRootStackAdminList = {
 	Admin: undefined
 }
 
-export interface IRoute {
+export interface Route {
 	name: keyof TypeRootStackParamList
     component: ComponentType
 	isAdmin?: boolean

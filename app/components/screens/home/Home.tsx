@@ -1,5 +1,4 @@
 import { useTypedNavigation } from '@/hooks/useTypedNavigation';
-import { useNavigation } from '@react-navigation/native';
 import { FC } from 'react';
 import { View, Text, Pressable } from 'react-native';
 
