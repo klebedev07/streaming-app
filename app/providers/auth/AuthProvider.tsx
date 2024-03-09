@@ -8,13 +8,14 @@ import {
 import { View } from 'react-native'
 import { IContext, TypeUserState } from './auth-provider.interface'
 import * as SplashScreen from 'expo-splash-screen'
+import { IUser } from '@/shared/types/user.interface'
 
 export const AuthContext = createContext({} as IContext)
 
 SplashScreen.preventAutoHideAsync()
 
 const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
-	const [user, setUser] = useState<TypeUserState>(null)
+	const [user, setUser] = useState<TypeUserState>({} as IUser)
 
 	useEffect(() => {
 		let mounted = true
