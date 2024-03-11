@@ -1,19 +1,9 @@
-import {
-	FC,
-	PropsWithChildren,
-	createContext,
-	useEffect,
-	useState
-} from 'react'
-import { IContext, TypeUserState } from './auth-provider.interface'
 import * as SplashScreen from 'expo-splash-screen'
-import { getAccessToken, getUserFromStorage } from '@/services/auth/auth.helper'
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
+import { TypeUserState } from './auth-provider.interface'
+import { AuthContext } from './AuthProvider'
 
-export const AuthContext = createContext({} as IContext)
-
-SplashScreen.preventAutoHideAsync()
-
-const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
+export const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	const [user, setUser] = useState<TypeUserState>(null)
 
 	useEffect(() => {
@@ -33,7 +23,7 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 			}
 		}
 
-		checkAccessToken()
+		let ignore = checkAccessToken()
 
 		return () => {
 			isMounted = false
@@ -46,5 +36,3 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		</AuthContext.Provider>
 	)
 }
-
-export default AuthProvider
