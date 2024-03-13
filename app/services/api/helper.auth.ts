@@ -8,7 +8,7 @@ export const getNewTokens = async () => {
 	try {
 		const refreshToken = await getItemAsync(EnumSecureStore.REFRESH_TOKEN)
 		const response = await axios.post<String, { data: IAuthResponse }>(
-			API_URL + getAuthUrl('/login.access-token'),
+			API_URL + getAuthUrl('/login/access-token'),
 			{ refreshToken },
 			{
 				headers: {
@@ -16,8 +16,8 @@ export const getNewTokens = async () => {
 				}
 			}
 		)
-        if (response.data.accessToken) await saveToStorage(response.data)
-        return response
+		if (response.data.accessToken) await saveToStorage(response.data)
+		return response
 	} catch (error) {
 		console.log('error refresh token ', error)
 	}
