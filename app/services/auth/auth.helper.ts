@@ -14,7 +14,7 @@ export const getAccessToken = async () => {
 
 export const saveTokensStorage = async (data: ITokens) => {
 	await setItemAsync(EnumSecureStore.ACCESS_TOKEN, data.accessToken)
-	await setItemAsync(EnumSecureStore.REFRESH_TOKEN, data.accessToken)
+	await setItemAsync(EnumSecureStore.REFRESH_TOKEN, data.refreshToken)
 }
 
 export const deleteTokensStorage = async () => {

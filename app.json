@@ -28,6 +28,8 @@
     },
     "plugins": [
       "expo-secure-store"
-    ]
-  }
+    ],
+    "sdkVersion": "50.0.0"
+  },
+  "name": "streaming-app"
 }

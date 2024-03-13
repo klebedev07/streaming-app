@@ -6,17 +6,22 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { View, Text, Pressable } from 'react-native'
 import AuthFields from './AuthFields'
 import DismissKeyboard from '@/components/ui/form-elements/DismissKeyboard'
+import { useAuthMutations } from './useAuthMutations'
 
 const Auth: FC = () => {
 	const [isReg, setIsReg] = useState(false)
-	const [isLoading, setLoading] = useState(false)
+
 	const { handleSubmit, reset, control } = useForm<IAuthFormData>({
 		mode: 'onChange'
 	})
 
-	const onSubmit: SubmitHandler<IAuthFormData> = data => {
-		const { email, password } = data
+	const { isLoading, registerSync, loginSync } = useAuthMutations(reset)
+
+	const onSubmit: SubmitHandler<IAuthFormData> = (data) => {
+		if (isReg) registerSync(data)
+		else loginSync(data)
 	}
+
 
 	return (
 		<DismissKeyboard>

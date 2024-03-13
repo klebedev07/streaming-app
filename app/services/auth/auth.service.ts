@@ -1,11 +1,11 @@
-import { EnumAsyncStorage, IAuthResponse } from "@/shared/types/auth.interface"
-import { request } from "../api/request.api"
-import { deleteTokensStorage, saveToStorage } from "./auth.helper"
-import { getAuthUrl } from "@/config/api.config"
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
+import { EnumAsyncStorage, IAuthResponse } from '@/shared/types/auth.interface'
 
+import { request } from '@/services/api/request.api'
+import { deleteTokensStorage, saveToStorage } from '@/services/auth/auth.helper'
 
+import { getAuthUrl } from '@/config/api.config'
 
 export const AuthService = {
 	async main(variant: 'reg' | 'login', email: string, password: string) {
