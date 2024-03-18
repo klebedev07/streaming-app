@@ -15,7 +15,7 @@ export const useAuthMutations = (reset: UseFormReset<IAuthFormData>) => {
 		mutationKey: ['login'],
 		mutationFn: ({ email, password }: IAuthFormData) => AuthService.main('login', email, password),
 		onSuccess: (data) => {
-		  setTimeout(() => {
+		  setTimeout(() => { 
 			reset();
 			setUser(data.user);
 		  });

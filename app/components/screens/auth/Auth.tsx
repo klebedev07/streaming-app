@@ -22,7 +22,6 @@ const Auth: FC = () => {
 		else loginSync(data)
 	}
 
-
 	return (
 		<DismissKeyboard>
 			<View className='mx-2 items-center justify-center h-full'>
