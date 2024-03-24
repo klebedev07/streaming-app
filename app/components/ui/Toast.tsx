@@ -13,8 +13,8 @@ const Toast: FC = () => {
 			topOffset={50}
 			config={{
 				success: props => <BaseToast {...props} {...options('#67E769')} />,
-				info: props => <BaseToast {...props} {...options('#67E769')} />,
-				error: props => <BaseToast {...props} {...options('#67E769')} />
+				info: props => <BaseToast {...props} {...options('#65d4ff')} />,
+				error: props => <BaseToast {...props} {...options('#ff4949')} />
 			}}
 		/>
 	)
