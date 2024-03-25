@@ -2,6 +2,7 @@ import { IUser } from '@/shared/types/user.interface'
 import { request } from './api/request.api'
 import { getUserUrl } from '@/config/api.config'
 import { IAuthFormData } from '@/shared/types/auth.interface'
+import { IMovie } from '@/shared/types/movie.interface'
 
 export const UserService = {
 	async getAll(searchTerm?: string) {
@@ -47,5 +48,20 @@ export const UserService = {
 			url: getUserUrl(`/${_id}`),
 			method: 'DELETE',
 		})
-	}
+	},
+
+	async getFavorites() {
+		return request<IMovie[]>({
+			url: getUserUrl('/profile/favorites'),
+			method: 'GET'
+		})
+	},
+
+	async toggleFavorite(movieId: string) {
+		return request({
+			url: getUserUrl('/profile/favorites'),
+			method: 'PUT',
+			data: { movieId }
+		})
+	},
 }
