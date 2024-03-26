@@ -1,9 +1,5 @@
-export interface IGenre {
-    _id: string
-    name: string
-    slug: string
-    description: string
-}
+import { IGenre } from "./genre.interface"
+
 
 interface IActor {
     _id: string

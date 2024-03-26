@@ -6,6 +6,7 @@ import {
 	StyleSheet,
 	Text,
 	View,
+	ViewStyle,
 } from 'react-native'
 import Animated from 'react-native-reanimated'
 
@@ -19,23 +20,22 @@ import { getMediaSource } from '@/utils/getMediaSource'
 import Rating from './Rating'
 import FavoriteButton from './favorite-button/FavoriteButton'
 import { useMovieItemAnimation } from './useMovieItemAnimation'
-import clsx from 'clsx'
 
 const ReanimatedPressable = Animated.createAnimatedComponent(Pressable)
 
 interface IMovieItem {
 	index: number
-	className?: string
+	style?: ViewStyle
 	movie: IMovie
 }
 
-const MovieItem: FC<IMovieItem> = ({ index, movie, className }) => {
+const MovieItem: FC<IMovieItem> = ({ index, movie, style }) => {
 	const { navigate } = useTypedNavigation()
 	const { name } = useTypedRoute()
 
 	const isFavoritePage = name === 'Favorites'
 
-	const { styleAnimation } = useMovieItemAnimation(index)
+	const { styleAnimation } = useMovieItemAnimation(index, style)
 
 	return (
 		<ReanimatedPressable
@@ -45,7 +45,7 @@ const MovieItem: FC<IMovieItem> = ({ index, movie, className }) => {
 					slug: movie.slug
 				})
 			}
-			className={clsx('rounded-xl overflow-hidden h-56 w-40', className)}
+			className={'rounded-xl overflow-hidden h-56'}
 		>
 			{isFavoritePage && (
 				<View style={{ position: 'absolute', zIndex: 1, right: 2, top: 2 }}>

@@ -8,9 +8,10 @@ import { Feather } from 'expo-vector-icons'
 const BlurButton: FC<PropsWithChildren<IBlurButton>> = ({
 	children,
 	color = '#fff',
-	icon,
 	iconSize = 21,
-	className,
+	style,
+	isSmall = false,
+	icon,
 	...rest
 }) => {
 	return (
@@ -20,8 +21,9 @@ const BlurButton: FC<PropsWithChildren<IBlurButton>> = ({
 				tint='light'
 				className={clsx(
 					'items-center justify-center overflow-hidden',
-					 'w-12 h-12 rounded-2xl'
+					isSmall ? 'w-8 h-8 rounded-lg' : 'w-12 h-12 rounded-2xl'
 				)}
+				style={style}
 			>
 				{children ? (
 					children

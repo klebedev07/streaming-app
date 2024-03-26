@@ -3,28 +3,25 @@ import { Pressable, ScrollView, Text, View } from 'react-native'
 import { IMovieCatalog } from './movie-catalog.interface'
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 import Heading from '../../heading/Heading'
-import { Ionicons } from 'expo-vector-icons'
 import Description from '../../heading/Description'
 import MovieItem from '../movie-item/MovieItem'
+import { AntDesign } from 'expo-vector-icons'
 
 const MovieCatalog: FC<IMovieCatalog> = ({
 	description,
 	isBackButton,
-	movies,
+	movies = [],
 	title
 }) => {
 	const { goBack } = useTypedNavigation()
+
 	return (
 		<View>
 			<View className='flex-row items-center justify-between'>
 				<Heading title={title} className='mb-3' />
 				{isBackButton && (
 					<Pressable onPress={goBack}>
-						<Ionicons
-							name='arrow-back-circle-outline'
-							size={32}
-							color='white'
-						/>
+						<AntDesign name="arrowleft" size={32} color="white" />
 					</Pressable>
 				)}
 			</View>
@@ -36,14 +33,14 @@ const MovieCatalog: FC<IMovieCatalog> = ({
 					{movies?.length ? (
 						movies.map((movie, index) => (
 							<View className='mb-6' key={movie._id}>
-								<MovieItem index={index} movie={movie} />
+								<MovieItem index={index} movie={movie} style={{ width: 160 }} />
 							</View>
 						))
 					) : (
 						<Text className='text-white text-lg'>Elements not found</Text>
 					)}
 				</View>
-			</ScrollView> 
+			</ScrollView>
 		</View>
 	)
 }

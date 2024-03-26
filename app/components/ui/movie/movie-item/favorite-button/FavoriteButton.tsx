@@ -5,23 +5,23 @@ import { useFavoriteAnimation } from './useFavoriteAnimation'
 import Animated, { withSpring } from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import { useFavorite } from './useFavorite'
+import clsx from 'clsx'
 
 interface IFavoriteButton {
 	movieId: string
 	isSmall?: boolean
 }
 
-const FavoriteButton: FC<IFavoriteButton> = ({ isSmall, movieId }) => {
-	const {isSmashed, toggleFavorite} = useFavorite(movieId)
-
-
-    const { outlineStyle, fillStyle, liked } = useFavoriteAnimation(isSmashed)
+const FavoriteButton: FC<IFavoriteButton> = ({ isSmall = false, movieId }) => {
+	const { isSmashed, toggleFavorite } = useFavorite(movieId)
+	const { outlineStyle, fillStyle, liked } = useFavoriteAnimation(isSmashed)
 
 	return (
 		<BlurButton
+			isSmall={isSmall}
 			onPress={() => {
 				liked.value = withSpring(liked.value === 1 ? 0 : 1)
-                toggleFavorite()
+				toggleFavorite()
 			}}
 		>
 			<Animated.View

@@ -5,6 +5,7 @@ import Search from '@/components/screens/search/Search'
 import Favorites from '@/components/screens/favorites/Favorites'
 import Profile from '@/components/screens/profile/Profile'
 import { Route } from '@/navigation/navigation.types'
+import Genre from '@/components/screens/genre/Genre'
 
 export const routes: Route[] = [
 	{
@@ -32,6 +33,12 @@ export const routes: Route[] = [
 		component: Profile,
 		isAdmin: false
 	},
+	{
+		name: 'Genre',
+		component: Genre,
+		isAdmin: false
+	},
+
 	{
 		name: 'Admin',
 		component: Admin,
