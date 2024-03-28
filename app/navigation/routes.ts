@@ -6,6 +6,8 @@ import Favorites from '@/components/screens/favorites/Favorites'
 import Profile from '@/components/screens/profile/Profile'
 import { Route } from '@/navigation/navigation.types'
 import Genre from '@/components/screens/genre/Genre'
+import Movie from '@/components/screens/movie/Movie'
+import Actor from '@/components/screens/actor/Actor'
 
 export const routes: Route[] = [
 	{
@@ -36,6 +38,16 @@ export const routes: Route[] = [
 	{
 		name: 'Genre',
 		component: Genre,
+		isAdmin: false
+	},
+	{
+		name: 'Actor',
+		component: Actor,
+		isAdmin: false
+	},
+	{
+		name: 'Movie',
+		component: Movie,
 		isAdmin: false
 	},
 
