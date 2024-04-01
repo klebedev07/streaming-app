@@ -1,7 +1,7 @@
 import { IGenre } from "./genre.interface"
 
 
-interface IActor {
+export interface IActor {
     _id: string
     photo: string
     name: string
@@ -10,7 +10,7 @@ interface IActor {
 }
 
 
-interface IParameters {
+export interface IParameters {
     year: number
     duration: number
     country: string

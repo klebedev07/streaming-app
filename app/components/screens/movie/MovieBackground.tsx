@@ -4,12 +4,10 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { FC } from 'react'
 import { Animated, StyleSheet, Text, View, Image } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { IMovieProps } from './movie-page.interface'
 
-interface IMovieBackground {
-	movie: IMovie
-}
 
-const MovieBackground: FC<IMovieBackground> = ({ movie }) => {
+const MovieBackground: FC<IMovieProps> = ({ movie }) => {
 	const { top } = useSafeAreaInsets()
 
 	return (

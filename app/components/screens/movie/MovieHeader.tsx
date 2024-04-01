@@ -6,12 +6,9 @@ import { IMovie } from '@/shared/types/movie.interface'
 import { FC } from 'react'
 import { Animated, Text, View, StyleSheet } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { IMovieProps } from './movie-page.interface'
 
-interface IMovieHeader {
-	movie: IMovie
-}
-
-const MovieHeader: FC<IMovieHeader> = ({ movie }) => {
+const MovieHeader: FC<IMovieProps> = ({ movie }) => {
 	const { goBack } = useTypedNavigation()
 	const { top } = useSafeAreaInsets()
 

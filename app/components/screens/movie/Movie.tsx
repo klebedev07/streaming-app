@@ -1,11 +1,10 @@
 import { FC } from 'react'
-import { Text, View } from 'react-native'
 import { useMovie } from './useMovie'
 import Loader from '@/components/ui/Loader'
 import Layout from '@/components/ui/layout/Layout'
 import MovieHeader from './MovieHeader'
-import MovieInfo from './MovieInfo'
 import MovieBackground from './MovieBackground'
+import MovieContent from './movie-content/MovieContent'
 
 /*
 
@@ -21,7 +20,7 @@ const Movie: FC = () => {
 		<Layout style={{ paddingTop: 0 }}>
 			<MovieHeader movie={movie} />
       <MovieBackground movie={movie}/>
-      <MovieInfo movie={movie}/>
+      <MovieContent movie={movie}/>
 		</Layout>
 	)
 }
