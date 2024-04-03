@@ -3,7 +3,7 @@ import Rating from '@/components/ui/movie/movie-item/Rating'
 import FavoriteButton from '@/components/ui/movie/movie-item/favorite-button/FavoriteButton'
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
 import { FC } from 'react'
-import { Animated, Text, View, StyleSheet } from 'react-native'
+import { Animated, Text, View, StyleSheet, Platform } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { IMovieProps } from './movie-page.interface'
 import { inputRange } from './movie.constant'
@@ -16,7 +16,7 @@ const MovieHeader: FC<IMovieProps> = ({ movie, y }) => {
 		<View
 			style={{
 				marginTop: -top,
-				paddingTop: top + 6,
+				paddingTop: Platform.OS == 'ios' ? top + 6 : top + 35,
 				position: 'absolute',
 				left: 0,
 				top: 0,
@@ -35,18 +35,20 @@ const MovieHeader: FC<IMovieProps> = ({ movie, y }) => {
 					opacity: y.interpolate({
 						inputRange,
 						outputRange: [0, 0, 1.8]
-					}) 
+					})
 				}}
 				className='bg-[#0D0404]'
 			/>
 			<BlurButton icon={'chevron-left'} iconSize={24} onPress={goBack} />
-			<Animated.View className='items-center w-2/3'
-			style={{
-				opacity: y.interpolate({
-					inputRange,
-					outputRange: [0, 0, 1.6]
-				}) 
-			}}>
+			<Animated.View
+				className='items-center w-2/3'
+				style={{
+					opacity: y.interpolate({
+						inputRange,
+						outputRange: [0, 0, 1.6]
+					})
+				}}
+			>
 				<Text className='text-white font-semibold text-2xl mb-0.5 px-2'>
 					{movie.title}
 				</Text>

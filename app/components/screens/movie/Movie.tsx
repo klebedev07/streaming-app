@@ -6,14 +6,15 @@ import MovieHeader from './MovieHeader'
 import MovieBackground from './MovieBackground'
 import MovieContent from './movie-content/MovieContent'
 import { Animated } from 'react-native'
-/*
+import { useUpdateCountOpened } from './useCountOpened'
 
-*/
 
 const Movie: FC = () => {
 	const y = useRef(new Animated.Value(0)).current //TODO
 
 	const { movie, isLoading } = useMovie()
+
+	useUpdateCountOpened()
 
 	if (isLoading) return <Loader />
 	if (!movie) return null
