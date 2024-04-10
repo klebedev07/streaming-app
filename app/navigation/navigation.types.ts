@@ -1,4 +1,4 @@
-import { ComponentType } from "react"
+import {ComponentType} from "react"
 
 export type TypeRootStackParamList = {
     Auth: undefined
@@ -20,11 +20,19 @@ export type TypeRootStackParamList = {
 } & TypeRootStackAdminList
 
 export type TypeRootStackAdminList = {
-	Admin: undefined
+    Admin: undefined
+    UserEdit: { id: string }
+    MovieEdit: {id: string}
+    GenreEdit: {id: string}
+    ActorEdit: {id: string}
+    UserList: undefined
+    MovieList: undefined
+    GenreList: undefined
+    ActorList: undefined
 }
 
 export interface Route {
-	name: keyof TypeRootStackParamList
+    name: keyof TypeRootStackParamList
     component: ComponentType
-	isAdmin?: boolean
+    isAdmin?: boolean
 }

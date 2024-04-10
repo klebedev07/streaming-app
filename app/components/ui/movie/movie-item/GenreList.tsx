@@ -1,7 +1,7 @@
 import { useTypedNavigation } from '@/hooks/useTypedNavigation'
-import { IGenre } from '@/shared/types/movie.interface'
 import { FC } from 'react'
 import { Pressable, Text, View } from 'react-native'
+import {IGenre} from "@/shared/types/genre.interface";
 
 const GenreList: FC<{ genres: IGenre[] }> = ({ genres }) => {
 	const { navigate } = useTypedNavigation()

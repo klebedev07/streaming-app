@@ -1,14 +1,5 @@
 import { IGenre } from "./genre.interface"
-
-
-export interface IActor {
-    _id: string
-    photo: string
-    name: string
-    countMovies: number
-    slug: string
-}
-
+import {IActor} from "@/shared/types/actor.interface";
 
 export interface IParameters {
     year: number
