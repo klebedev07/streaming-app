@@ -1,12 +1,11 @@
 import { FC } from 'react'
-import { Text, View } from 'react-native'
-import { useTranding } from './useTrending'
+import { useTrending } from './useTrending'
 import Loader from '@/components/ui/Loader'
 import Layout from '@/components/ui/layout/Layout'
 import MovieCatalog from '@/components/ui/movie/catalog/MovieCatalog'
 
 const Trending: FC = () => {
-	const { isLoading, movies } = useTranding()
+	const { isLoading, movies } = useTrending()
 
 	if (isLoading) return <Loader />
 
