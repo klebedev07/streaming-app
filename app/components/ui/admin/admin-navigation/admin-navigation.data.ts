@@ -1,4 +1,4 @@
-import {INavItem} from "@/components/ui/admin-navigation/admin-navigation.interface";
+import {INavItem} from "@/components/ui/admin/admin-navigation/admin-navigation.interface";
 
 export const navItems: INavItem[] = [
     {

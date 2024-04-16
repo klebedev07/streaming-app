@@ -1,7 +1,6 @@
-import { FC } from 'react'
-import { View, Text } from 'react-native'
+import React, { FC } from 'react'
 import Layout from "@/components/ui/layout/Layout";
-import AdminNavigation from "@/components/ui/admin-navigation/AdminNavigation";
+import AdminNavigation from "@/components/ui/admin/admin-navigation/AdminNavigation";
 
 const Admin: FC = () => {
 	return (

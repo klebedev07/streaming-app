@@ -1,10 +1,10 @@
 import {FC} from "react";
-import {INavItem} from "@/components/ui/admin-navigation/admin-navigation.interface";
 import {useTypedNavigation} from "@/hooks/useTypedNavigation";
 import {useTypedRoute} from "@/hooks/useTypedRoute";
 import {Pressable, Text} from "react-native";
 import {MaterialIcons} from "expo-vector-icons";
 import clsx from "clsx";
+import {INavItem} from "@/components/ui/admin/admin-navigation/admin-navigation.interface";
 
 export const AdminNavItem: FC<{ item: INavItem }> = ({item}) => {
     const {navigate} = useTypedNavigation()
