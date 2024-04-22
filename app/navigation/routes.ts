@@ -13,9 +13,9 @@ import ActorList from "@/components/screens/admin/actors/ActorList";
 import {GenreEdit} from "@/components/screens/admin/genre/GenreEdit";
 import {MovieEdit} from "@/components/screens/admin/movie/MovieEdit";
 import {UserEdit} from "@/components/screens/admin/user/UserEdit";
-import {UserList} from "@/components/screens/admin/users/UserList";
 import GenreList from "@/components/screens/admin/genres/GenreList";
-import {MovieList} from "@/components/screens/admin/movies/MovieList";
+import MovieList from "@/components/screens/admin/movies/MovieList";
+import UserList from "@/components/screens/admin/users/UserList";
 
 export const userRoutes: Route[] = [
 	{

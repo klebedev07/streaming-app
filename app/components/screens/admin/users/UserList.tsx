@@ -6,7 +6,7 @@ import AdminHeader from "@/components/ui/admin/table-header/AdminHeader";
 import AdminTableHeader from "@/components/ui/admin/table/AdminTableHeader";
 import AdminTable from "@/components/ui/admin/table/AdminTable";
 
-export const UserList: FC = () => {
+const UserList: FC = () => {
 
     const {
         control,
@@ -27,3 +27,5 @@ export const UserList: FC = () => {
         </Layout>
     )
 };
+
+export default UserList;

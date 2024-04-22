@@ -10,7 +10,7 @@ interface IAdminHeader {
     control: Control<ISearchFormData>
 }
 
-const AdminHeader: FC<IAdminHeader> = ({onPress, control}) => {
+const AdminHeader: FC<IAdminHeader> = ({ control, onPress }) => {
     return (
         <View className='flex-row items-center justify-between mb-3'>
             <View style={{

@@ -7,9 +7,13 @@ const AdminCreateButton: FC<{ onPress: () => void }> = ({onPress}) => {
     return (
         <Pressable onPress={onPress}>
             <LinearGradient
-                colors={['#DC3F41', 'a6282b']} start={{x: 0, y: 0.75}} end={{x: 1, y: 0.25}}
-                className="w-12 h-12 rounded-2xl items-center justify-center"/>
-            <Feather name='plus' size={24} color='#fff'/>
+                start={{x: 0, y: 0.75}}
+                end={{x: 1, y: 0.25}}
+                className='w-12 h-12 rounded-2xl items-center justify-center'
+                colors={['#DC3F41', '#a6282b']}
+            >
+                <Feather name='plus' size={24} color='#fff'/>
+            </LinearGradient>
         </Pressable>
     )
 }
