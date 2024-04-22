@@ -5,7 +5,9 @@ export const useGetAllMovies = () => {
     const { data: movies, isLoading } = useQuery({
 		queryKey: ['profile'],
 		queryFn: () => MovieService.getAll(),
-        select: (data) => data.slice(0, 10) 
+        select: (data) => data
+            .filter(item=> !!item.poster && !!item.slug) // иначе ломается анимация если придет пустое с бэка
+            .slice(0, 10)
 	})
 
     return { movies, isLoading }
